@@ -1,6 +1,8 @@
 var monitor = require("./../../../lib/monitor"),
     pulls = require("./../../../lib/pulls"),
+    utils = require("./../../../lib/utils"),
     repos = require("./../../../lib/repos"),
+    conditionFiles = [],
     conditions = [];
 
 describe("Monitor", function () {
@@ -15,14 +17,20 @@ describe("Monitor", function () {
 
         for (repo in repos) {
             for (condition in repos[repo].conditions) {
-                cond = require("./../../../lib/conditions/"+
-                               repos[repo].conditions[condition]);
-                conditions.push(cond);
-                spyOn(cond, "evaluate").andCallFake(function () {}); 
+                if (!utils.contains(conditionFiles, condition)) {
+                    conditionFiles.push(condition);
+                    cond = require("./../../../lib/conditions/"+
+                                   repos[repo].conditions[condition]);
+                    conditions.push(cond);
+                    spyOn(cond, "evaluate").andCallFake(function () {}); 
+                }
             };
         }
     });
-
+    afterEach(function () {
+        conditionFiles = [],
+        conditions = [];
+    });
     it("gets all pulls", function () {
         monitor.start();
         expect(pulls.getAll).toHaveBeenCalled();
