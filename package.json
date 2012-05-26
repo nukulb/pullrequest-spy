@@ -1,0 +1,17 @@
+{
+  "name": "Pull-Request-Spy",
+  "version": "0.0.1",
+  "description": "spies the pull requests to see what is left.",
+  "author": {
+    "name": "Nukul Bhasin"
+  },
+  "licenses": [{
+    "type": "Apache 2.0",
+    "url": "http://www.apache.org/licenses/LICENSE-2.0"
+  }],
+  "dependencies": {
+    "github": "*",
+    "jasmine-node": "1.0.7",
+    "jWorkflow": "*"
+  }
+}
