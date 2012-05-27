@@ -4,7 +4,7 @@ var pulls = require("./../../../../lib/pulls"),
 describe("rebase", function () {
 
     beforeEach(function () {
-        spyOn(pulls, "getRef").andCallFake(function (x, y, z, callback){
+        spyOn(pulls, "getRef").andCallFake(function (x, y, z, callback) {
             callback(undefined,
             { object : { sha: "1A" }});
         });
