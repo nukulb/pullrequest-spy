@@ -30,4 +30,5 @@ Make sure you have node installed
 
 ##Upcoming features
 1. Automatically put the comment into the pull request
+2. Pass in arguments from the configuration file
 
