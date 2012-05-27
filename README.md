@@ -18,15 +18,16 @@ Make sure you have node installed
 
 ##Current supported conditions
 1. Memory test required
-2. Check to see if the CI build is failing - hudson CI <server-ur>/api/json
+2. Check to see if the CI build is failing - hudson CI <server-ur>/api/json (This covers lint and testing)
 3. Check if the branch is running behind the base branch
 4. Check to see if the Pull request has not been updated in 3 days.
 
 ##Next conditions on the list
 1. Test if the files are being changed by another open pull request.
 2. Check if at least one test file has changed
-5. Check to see if there is no comment saying "r+" or "code complete"
-6. Check to see if the extension folder has been modified - does it need tests
+3. Check to see if there is no comment saying "r+" or "code complete"
+4. Check to see if the extension folder has been modified - does it need tests
+5. Check to see that files begin with the correct license headers
 
 ##Upcoming features
 1. Automatically put the comment into the pull request
