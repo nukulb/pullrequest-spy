@@ -8,7 +8,7 @@ Make sure you have node installed
 ./configure
 
 ##To Run
-./bin/start.sh
+./bin/start
 
 ##To add a condition
 1. Add your condition file under lib/conditions/<name>.js
