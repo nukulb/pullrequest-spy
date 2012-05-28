@@ -28,8 +28,12 @@ Make sure you have node installed
 2. Check if at least one test file has changed
 3. Check to see if the extension folder has been modified - does it need tests
 4. Check to see that files begin with the correct license headers
+5. Existence of issue#
+6. pull request sentiment
+7. Add another library - check if OSS has been udpated
+8. 
 
 ##Upcoming features
 1. Automatically put the comment into the pull request
 2. Pass in arguments from the configuration file
-
+3. Suggested reviewers - based on person with max commits on file or history of the file
