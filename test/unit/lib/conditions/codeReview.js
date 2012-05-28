@@ -1,7 +1,7 @@
 var pulls = require("./../../../../lib/pulls"),
     codeReview = require("./../../../../lib/conditions/codeReview");
 
-describe("rebase", function () {
+describe("code review", function () {
 
     beforeEach(function () {
         spyOn(pulls, "getIssueComments").andCallFake(function (x, y, z, callback) {
@@ -27,7 +27,8 @@ describe("rebase", function () {
         },2000);
         
         runs(function () {
-           expect(evaluations[50][0]).toEqual(codeReview.error); 
+           
+            expect(evaluations[50][0]).toEqual(codeReview.error); 
            expect(evaluations[50].length).toEqual(1); 
        });
                  
