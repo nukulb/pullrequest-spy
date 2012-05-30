@@ -40,7 +40,7 @@ describe("Issue", function () {
                  
     });
    
-   it("evaluate success", function () {
+   it("evaluate success1", function () {
         var evaluations = {},
             x;
         
@@ -69,7 +69,7 @@ describe("Issue", function () {
        });
                  
     });
-    it("evaluate success", function () {
+   it("evaluate success2", function () {
         var evaluations = {},
             x;
         
