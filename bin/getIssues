@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+var pulls = require('./../lib/pulls'),
+    utils = require('./../lib/utils');
+
+
+function generateIssuesFixed() {
+        var issues = [];
+        var repos = {
+            Framework : {
+                user : "blackberry",
+                name : "BB10-WebWorks-Framework"
+            },
+            Packager : {
+                user : "blackberry",
+                name : "BB10-Webworks-Packager"
+            }
+        }
+        for (var repo in repos) {
+            (function (repo) {
+                pulls.getIssuesByMilestone(repos[repo].user, repos[repo].name,"", "open", function (err, res) {
+                     if (!err) {
+                        for (var issue in res) {
+                                if(res[issue].url)
+                                 console.log(res[issue].title + " - " + res[issue].html_url);
+                        } 
+                    }
+                });
+            })(repo);
+        }
+
+    }
+
+generateIssuesFixed();
+
