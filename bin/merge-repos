@@ -1,0 +1,12 @@
+In the framework repo
+1. branch off from next
+2. git filter-branch -f --prune-empty --tree-filter 'mkdir -p .framework; mv * .framework; mv .framework Framework' -- --all
+3. git gc --aggressive
+ 
+ 
+##In the packager repo
+1. git remote add frame ../nb-framework/
+2. git fetch frame
+3. git merge frame/next
+4. git mergetool
+5. git commit -m "adding framework with history"
