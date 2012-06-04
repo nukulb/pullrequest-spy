@@ -2,9 +2,16 @@ In the framework repo
 1. branch off from next
 2. git filter-branch -f --prune-empty --tree-filter 'mkdir -p .framework; mv * .framework; mv .framework Framework' -- --all
 3. git gc --aggressive
+4. Remove all submodules and add them to the new path of Framework/dependencies
+git rm --cached vendors/submodule1
  
  
 ##In the packager repo
+#To remove the Framework from all the history
+git filter-branch -f --prune-empty --tree-filter 'rm -rf Framework' -- --all
+Remove Framework submodule
+git rm --cached vendors/submodule1
+
 1. git remote add frame ../nb-framework/
 2. git fetch frame
 3. git merge frame/next
